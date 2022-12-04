@@ -21,11 +21,11 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore GitInsight
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build GitInsight --no-restore
     - name: Test
-      run: dotnet test --logger "trx;LogFileName=test-results.trx" || true
+      run: dotnet test GitInsight --logger "trx;LogFileName=test-results.trx" || true
 
     - name: Test Report
       uses: dorny/test-reporter@v1
