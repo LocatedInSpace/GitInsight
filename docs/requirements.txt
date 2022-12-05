@@ -1,0 +1,16 @@
+Functional Requirements:
+
+    The program must be able to receive a path to a local Git repository as a command-line parameter.
+    The program must be able to run in two modes: commit frequency mode and commit author mode.
+    In commit frequency mode, the program must output a list of commit counts per day.
+    In commit author mode, the program must output a list of commit counts per day per author.
+    The program must store analysis results in a database.
+    The program must be able to update stored analysis results when a repository is re-analyzed.
+    The program must be able to skip analysis if the stored results correspond to the most current state of the repository.
+
+Non-Functional Requirements:
+
+    The program must be written in C# and built using .Net Core.
+    The program must be able to run from the command-line.
+    The program must be well-documented and easy to use.
+    The program must be tested thoroughly to ensure correctness and reliability.

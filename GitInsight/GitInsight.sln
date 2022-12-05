@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# 
+#
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitInsight", "GitInsight\GitInsight.csproj", "{7A7EDDFE-D930-426D-A5BB-1592E682354A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitInsight.Tests", "GitInsight.Tests\GitInsight.Tests.csproj", "{CD3F3516-4BC4-46B9-9CC9-4F3D51DC3180}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitInsight.Infrastructure", "GitInsight.Infrastructure\GitInsight.Infrastructure.csproj", "{25D1A301-3B48-4EB1-A30D-4305C8105EA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitInsight.Core", "GitInsight.Core\GitInsight.Core.csproj", "{179CAA1B-D620-4F76-B2D4-272DEAC83AC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,5 +23,13 @@ Global
 		{CD3F3516-4BC4-46B9-9CC9-4F3D51DC3180}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD3F3516-4BC4-46B9-9CC9-4F3D51DC3180}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD3F3516-4BC4-46B9-9CC9-4F3D51DC3180}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25D1A301-3B48-4EB1-A30D-4305C8105EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25D1A301-3B48-4EB1-A30D-4305C8105EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25D1A301-3B48-4EB1-A30D-4305C8105EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25D1A301-3B48-4EB1-A30D-4305C8105EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{179CAA1B-D620-4F76-B2D4-272DEAC83AC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{179CAA1B-D620-4F76-B2D4-272DEAC83AC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{179CAA1B-D620-4F76-B2D4-272DEAC83AC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{179CAA1B-D620-4F76-B2D4-272DEAC83AC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
