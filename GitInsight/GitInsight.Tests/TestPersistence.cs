@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace GitInsight.Tests;
 
@@ -23,14 +24,14 @@ public class TestPersistence : IDisposable
         _context.Dispose();
     }
     
-    /*
+    
     [Fact]
     public void Test_Save_Results()
     {
         // Arrange
         var repoName = "/path/to/repo";
         var commit = "d9cfd8f8b6d4c3b2a1a0a9";
-        var results = "1 2017-12-08<br>6 2017-12-26";
+        var results = System.Text.Json.JsonSerializer.Deserialize<List<Dictionary<string, object>>>("[{\"date\":\"2022-12-01\",\"count\":1},{\"date\":\"2022-12-02\",\"count\":1},{\"date\":\"2022-12-04\",\"count\":5},{\"date\":\"2022-12-05\",\"count\":2}]");
         var mode = Mode.CommitFrequency;
 
         // Act
@@ -44,16 +45,17 @@ public class TestPersistence : IDisposable
         Assert.Equal(results, entry.results);
     }
 
+    
     [Fact]
     public void Test_Update_Results()
     {
         // Arrange
         var repoName = "/path/to/repo";
         var commit = "d9cfd8f8b6d4c3b2a1a0a9";
-        var results = "1 2017-12-08<br>6 2017-12-26";
+        var results = System.Text.Json.JsonSerializer.Deserialize<List<Dictionary<string, object>>>("[{\"name\":\"LocatedInSpace\",\"totalCommits\":9,\"commits\":[{\"date\":\"2022-12-01\",\"count\":1},{\"date\":\"2022-12-02\",\"count\":1},{\"date\":\"2022-12-04\",\"count\":5},{\"date\":\"2022-12-05\",\"count\":2}]}]");
         var updatedCommit = "a9uer8f82jadc3b2a94dak";
-        var updatedResults = "2 2017-12-08<br>7 2017-12-26";
-        var mode = Mode.CommitFrequency;
+        var updatedResults = System.Text.Json.JsonSerializer.Deserialize<List<Dictionary<string, object>>>("[{\"name\":\"LocatedInSpace\",\"totalCommits\":10,\"commits\":[{\"date\":\"2022-12-01\",\"count\":2},{\"date\":\"2022-12-02\",\"count\":1},{\"date\":\"2022-12-04\",\"count\":5},{\"date\":\"2022-12-05\",\"count\":2}]}]");
+        var mode = Mode.CommitAuthor;
         
         _repo.Update(new RepositoryEntryDTO(repoName, commit, mode, results));
         
@@ -76,7 +78,7 @@ public class TestPersistence : IDisposable
         // Arrange
         var repoName = "/path/to/repo";
         var commit = "d9cfd8f8b6d4c3b2a1a0a9";
-        var results = "1 2017-12-08<br>6 2017-12-26";
+        var results = System.Text.Json.JsonSerializer.Deserialize<List<Dictionary<string, object>>>("[{\"date\":\"2022-12-01\",\"count\":1},{\"date\":\"2022-12-02\",\"count\":1},{\"date\":\"2022-12-04\",\"count\":5},{\"date\":\"2022-12-05\",\"count\":2}]");
         var mode = Mode.CommitFrequency;
 
         var entry = new RepositoryEntryDTO(repoName, commit, mode, results);
@@ -87,5 +89,5 @@ public class TestPersistence : IDisposable
 
         // Assert
         response.Should().BeEquivalentTo(entry);
-    }*/
+    }
 }

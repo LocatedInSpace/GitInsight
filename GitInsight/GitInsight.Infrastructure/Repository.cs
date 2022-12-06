@@ -63,7 +63,7 @@ public class Repository : IRepository
 
         using (var repo = new GitRepository(path))
         {
-            return (result, Analyze(repo, name, Mode.CommitAuthor));
+            return (result, Analyze(repo, name, Mode.CommitFrequency));
         }
     }
 
