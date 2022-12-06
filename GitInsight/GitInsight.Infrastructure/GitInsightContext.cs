@@ -1,4 +1,5 @@
-﻿using GitInsight.Core;
+﻿using System.Text.Json;
+using GitInsight.Core;
 
 namespace GitInsight.Infrastructure;
 
@@ -22,5 +23,12 @@ public class GitInsightContext : DbContext
         modelBuilder.Entity<RepositoryEntry>()
             .Property(e => e.Mode)
             .HasConversion(new EnumToStringConverter<Mode>(new ConverterMappingHints(size: 50)));
+
+        modelBuilder.Entity<RepositoryEntry>()
+            .Property(e => e.Results)
+            .HasConversion(
+                v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
+                v => JsonSerializer.Deserialize<List<Dictionary<string, object>>>(v, (JsonSerializerOptions)null)
+            );
     }
 }

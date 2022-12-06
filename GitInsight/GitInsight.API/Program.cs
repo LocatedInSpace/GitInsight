@@ -32,15 +32,17 @@ static async Task<IResult> GetAllRepos(GitInsightContext db)
 static async Task<IResult> CloneOrUpdateRepo(String name, String project, GitInsightContext db)
 {
     var repo = new Repository(db);
-    // mode hardcoded
     var result = repo.CloneOrPull($"{name}/{project}");
     if (result.Item1 == Response.Created)
     {
-        return Results.Created("", result.Item2);
+        //return Results.Created("", result.Item2);
+        // technically 201 is for PUT... but should be fine
+        return Results.Json(result.Item2, null, null, 201);
     }
     if (result.Item1 == Response.Updated)
     {
-        return Results.Ok(result.Item2);
+        //return Results.Ok(result.Item2);
+        return Results.Json(result.Item2, null, null, 200);
     }
     else
     {
