@@ -3,3 +3,5 @@
 public record RepositoryEntryDTO(string uri, string commit, Mode mode, string results);
 
 public record RepositoryFindDTO(string uri, string commit, Mode mode);
+
+public record RepositoryJsonDTO(string json);

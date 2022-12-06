@@ -15,7 +15,7 @@ namespace GitInsight
 {
     class Program
     {
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             // Parse the command-line arguments
             var mode = ParseArgs(args);
@@ -129,6 +129,6 @@ namespace GitInsight
                 default:
                     return Mode.Unknown;
             }
-        }
+        }*/
     }
 }
